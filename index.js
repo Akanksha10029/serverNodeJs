@@ -1,12 +1,20 @@
 const http = require("http"); //http package/module
 const fs = require("fs"); //file system package
+const url = require("url"); //url package
 
 const myServer = http.createServer((req, res) => {
     console.log("New request received");
     console.log("URL:",req.url);
-    console.log("Method:",req.method);
+    if(req.url === "/favicon.ico"){
+        return res.end();
+    }
+
     const dateNow = new Date();
-    const log = `${dateNow.toLocaleDateString()}: New request received\n`;
+    const log = `New request received.. method: ${req.method} on ${dateNow.toLocaleDateString()} at url ${req.url}\n`;
+    
+    const myUrl = url.parse(req.url, true);
+    // console.log("Parsed URL:", myUrl);
+
     fs.appendFile("log.txt", log, (err, data)=>{
         if(err){
             console.log("Error writing to log file",err);
@@ -15,12 +23,21 @@ const myServer = http.createServer((req, res) => {
         }
         res.setHeader("content-type","text/plain");
 
-        switch (req.url) {
+        switch (myUrl.pathname) {
             case "/":
                 res.end("HomePage");
                 break;
             case "/about":
-                res.end("About Page: I am Akanksha Rani");
+                const userName = myUrl.query.username;
+                res.end(`About Page: Hi ${userName}`);
+                break;
+            case "/search":
+                const search = myUrl.query.search_query;
+                res.end(`Search Page: Searching for ${search}`);
+                break;
+            case "/signUp":
+                if(req.method === "GET") res.end("This is a signup page");
+                else if(req.method === "POST") res.end("User signed up successfully");  
                 break;
             default:
                 res.end("Page Not Found");
