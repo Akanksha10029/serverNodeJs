@@ -17,6 +17,11 @@ app.use((req, res, next) => {
         }
     });
 
+    console.log("New request received");
+    console.log("URL:",req.url);
+    if(req.url === "/favicon.ico"){
+        return res.end();
+    }
     next(); // Continue to the next middleware or route handler
 });
 
@@ -31,6 +36,7 @@ app.get("/search", (req, res) => {
     return res.send(`Search Page: Searching for ${req.query.search_query}`);
 })
 
+
 // const myServer = http.createServer(app); //create server using express app
 
 app.listen(8000,()=> console.log("Server Started!"));
@@ -38,10 +44,10 @@ app.listen(8000,()=> console.log("Server Started!"));
 
 // const myServer = http.createServer((req, res) => {
 //     console.log("New request received");
-//     console.log("URL:",req.url);
-//     if(req.url === "/favicon.ico"){
-//         return res.end();
-//     }
+    // console.log("URL:",req.url);
+    // if(req.url === "/favicon.ico"){
+    //     return res.end();
+    // }
 
 //     const dateNow = new Date();
 //     const log = `New request received.. method: ${req.method} on ${dateNow.toLocaleDateString()} at url ${req.url}\n`;
