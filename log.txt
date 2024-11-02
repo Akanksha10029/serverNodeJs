@@ -17,3 +17,14 @@ New request received.. method: GET on 10/26/2024 at url /signUp?platform=faceboo
 New request received.. method: GET on 10/26/2024 at url /signUp?platform=facebook
 New request received.. method: GET on 10/27/2024 at url /search?username=Akanksha&userId=1&search_query=Js+all+videos
 New request received.. method: GET on 10/27/2024 at url /search?username=Akanksha&userId=1&search_query=Js+all+videos
+New request received.. method: GET on 10/30/2024 at url /
+New request received.. method: GET on 10/30/2024 at url /favicon.ico
+New request received.. method: GET on 10/30/2024 at url /about
+New request received.. method: GET on 10/30/2024 at url /about?username=Akanksha&userId=1
+New request received.. method: GET on 10/30/2024 at url /about?username=Akanksha&userId=1
+New request received.. method: GET on 10/30/2024 at url /about?username=Akanksha&userId=1
+New request received.. method: GET on 10/30/2024 at url /about?username=Akanksha
+New request received.. method: PUT on 10/30/2024 at url /about?username=Akanksha
+New request received.. method: PATCH on 10/30/2024 at url /about?username=Akanksha
+New request received.. method: PATCH on 10/30/2024 at url /about
+New request received.. method: GET on 10/30/2024 at url /about
