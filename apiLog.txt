@@ -136,3 +136,4 @@ IP: ::1 method: PATCH on 11/4/2024 at url /api/users/6727c4fe1fcd294978de4677
 IP: ::1 method: PATCH on 11/4/2024 at url /api/users/6727c4fe1fcd294978de4677
 IP: ::1 method: GET on 11/4/2024 at url /api/users/6727c4fe1fcd294978de4677
 IP: ::1 method: GET on 11/4/2024 at url /api/users
+IP: ::1 method: GET on 11/4/2024 at url /users
